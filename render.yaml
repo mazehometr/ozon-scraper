@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ozon-scraper-service
+    env: node
+    region: frankfurt
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: SCRAPER_SECRET
+        generateValue: true
+      - key: NODE_ENV
+        value: production
